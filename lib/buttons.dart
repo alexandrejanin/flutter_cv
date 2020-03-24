@@ -58,7 +58,7 @@ class _AnyButtonState extends State<AnyButton>
       },
       child: ScaleTransition(
         alignment: widget.alignment,
-        scale: Tween(begin: 1.0, end: 0.9).animate(CurvedAnimation(
+        scale: Tween<double>(begin: 1, end: 0).animate(CurvedAnimation(
           parent: _animation,
           curve: Curves.easeOutSine,
         )),
@@ -117,7 +117,7 @@ class _TextButtonState extends State<TextButton>
         _controller.reverse();
       },
       child: FadeTransition(
-        opacity: Tween(begin: 1.0, end: 0.75).animate(_controller),
+        opacity: Tween<double>(begin: 1, end: 0.75).animate(_controller),
         child: Text(
           widget.text,
           style: widget.style,

@@ -21,7 +21,7 @@ class SlideRoute extends PageRoute<void> {
   String get barrierLabel => null;
 
   @override
-  bool get maintainState => true;
+  bool get maintainState => false;
 
   @override
   bool get barrierDismissible => true;
