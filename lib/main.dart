@@ -206,7 +206,10 @@ class MyHomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                            bottom: 8.0,
+                          ),
                           child: Text(
                             'Expérience',
                             style: TextStyle(
@@ -223,7 +226,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 2.0),
                                 child: Text(
                                   '2019',
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -270,7 +273,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 2.0),
                                 child: Text(
                                   '2018',
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -307,6 +310,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
+                            left: 10.0,
                             bottom: 8.0,
                             top: 20.0,
                           ),
@@ -326,7 +330,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 2.0),
                                 child: Text(
                                   '2020\n2018',
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -363,7 +367,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 2.0),
                                 child: Text(
                                   '2018\n2017',
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -400,7 +404,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 2.0),
                                 child: Text(
                                   '2017',
-                                  textAlign: TextAlign.center,
+                                  textAlign: TextAlign.start,
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -429,6 +433,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
+                            left: 10.0,
                             bottom: 8.0,
                             top: 20.0,
                           ),
@@ -439,8 +444,6 @@ class MyHomePage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 10.0,
-                            right: 10.0,
                             bottom: 4.0,
                           ),
                           child: Row(
@@ -464,11 +467,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                            left: 10.0,
-                            right: 10.0,
-                            bottom: 8.0,
-                          ),
+                          padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             "rust-8080 est un émulateur du processeur Intel 8080."
                             "\nLangage: Rust",
@@ -505,11 +504,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                            left: 10.0,
-                            right: 10.0,
-                            bottom: 8.0,
-                          ),
+                          padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             "RealmGen est un générateur procédural de continents."
                             "\nLangage: C# (moteur Unity)",
@@ -544,11 +539,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                            left: 10.0,
-                            right: 10.0,
-                            bottom: 8.0,
-                          ),
+                          padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             "VYBES est une application de rencontre basée sur la musique."
                             "\nL'application est écrite en Dart (Flutter), le serveur en Typescript (Node.js).",
