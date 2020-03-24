@@ -31,7 +31,9 @@ class MyHomePage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    color: Colors.black12,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
@@ -53,22 +55,24 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0,
-                            vertical: 4.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white30,
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          child: Text(
-                            'Alexandre Janin',
-                            style: TextStyle(
-                              fontSize: 19.0,
-                              color: Colors.white,
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.w700,
+                        Center(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0,
+                              vertical: 4.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white30,
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Text(
+                              'Alexandre Janin',
+                              style: TextStyle(
+                                fontSize: 19.0,
+                                color: Colors.white,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           ),
                         ),
@@ -172,9 +176,40 @@ class MyHomePage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              Icon(
+                                Icons.web,
+                                color: Colors.white,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'janin.dev',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          height: 8,
+                          indent: 8.0,
+                          endIndent: 8.0,
+                          color: Colors.white30,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 4.0,
+                            horizontal: 16.0,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
                               Image.asset(
                                 'assets/github.png',
-                                width: 24,
+                                height: 24,
                               ),
                               Expanded(
                                 child: Text(
@@ -189,14 +224,25 @@ class MyHomePage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(height: 20.0),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16.0),
+                          child: Text(
+                            'Compétences',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                    color: Color(0xFFE3CFE4),
                   ),
                 ),
                 Expanded(
                   flex: 2,
                   child: Container(
+                    color: Colors.white.withOpacity(0.95),
                     padding: const EdgeInsets.only(
                       top: 20,
                       left: 20,
@@ -220,19 +266,18 @@ class MyHomePage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 2.0),
-                                child: Text(
-                                  '2019',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 13),
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 2.0,
+                                right: 10.0,
+                              ),
+                              child: Text(
+                                '2019',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(fontSize: 13),
                               ),
                             ),
                             Expanded(
-                              flex: 7,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -267,19 +312,18 @@ class MyHomePage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 2.0),
-                                child: Text(
-                                  '2018',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 13),
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 2.0,
+                                right: 10.0,
+                              ),
+                              child: Text(
+                                '2018',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(fontSize: 13),
                               ),
                             ),
                             Expanded(
-                              flex: 7,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -324,36 +368,33 @@ class MyHomePage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 2.0),
-                                child: Text(
-                                  '2020\n2018',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 13),
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 2.0,
+                                right: 10.0,
+                              ),
+                              child: Text(
+                                '2020\n2018',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(fontSize: 13),
                               ),
                             ),
-                            Expanded(
-                              flex: 7,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Université Pierre et Marie Curie, Paris",
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Université Pierre et Marie Curie, Paris",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  SizedBox(height: 4.0),
-                                  Text(
-                                    "Licence d'informatique, mineure design",
-                                    style: TextStyle(fontSize: 13),
-                                  ),
-                                ],
-                              ),
+                                ),
+                                SizedBox(height: 4.0),
+                                Text(
+                                  "Licence d'informatique, mineure design",
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -361,19 +402,18 @@ class MyHomePage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 2.0),
-                                child: Text(
-                                  '2018\n2017',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 13),
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 2.0,
+                                right: 10.0,
+                              ),
+                              child: Text(
+                                '2018\n2017',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(fontSize: 13),
                               ),
                             ),
                             Expanded(
-                              flex: 7,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -398,19 +438,18 @@ class MyHomePage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 2.0),
-                                child: Text(
-                                  '2017',
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(fontSize: 13),
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 2.0,
+                                right: 10.0,
+                              ),
+                              child: Text(
+                                '2017',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(fontSize: 13),
                               ),
                             ),
                             Expanded(
-                              flex: 7,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -444,13 +483,14 @@ class MyHomePage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
+                            right: 10.0,
                             bottom: 4.0,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                ' rust-8080',
+                                'rust-8080',
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w500,
@@ -479,7 +519,6 @@ class MyHomePage extends StatelessWidget {
                         SizedBox(height: 20.0),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 10.0,
                             right: 10.0,
                             bottom: 4.0,
                           ),
@@ -487,7 +526,7 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                ' RealmGen',
+                                'RealmGen',
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w500,
@@ -514,7 +553,6 @@ class MyHomePage extends StatelessWidget {
                         SizedBox(height: 20.0),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 10.0,
                             right: 10.0,
                             bottom: 4.0,
                           ),
@@ -522,7 +560,7 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                ' VYBES',
+                                'VYBES',
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w500,
@@ -553,7 +591,6 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             decoration: BoxDecoration(
-              color: Colors.white,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -567,8 +604,8 @@ class MyHomePage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Color(0xFFA6EBF2),
-              Color(0xFFC6B2C7),
+              Color(0xFFa6ebf2),
+              Color(0xFF823888),
             ],
             end: Alignment.bottomCenter,
           ),
