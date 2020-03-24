@@ -12,7 +12,7 @@ const RESOURCES = {
 "assets/assets/fonts/Montserrat-SemiBold.ttf": "c641dbee1d75892e4d88bdc31560c91b",
 "assets/assets/fonts/Montserrat-Thin.ttf": "43dd5b7a3d277362d5e801e5353e3a01",
 "assets/assets/github.png": "0c768863b084475e3760cf618d154919",
-"assets/assets/image.png": "dc7e997c3d27054cf74f5acfe953b019",
+"assets/assets/image.png": "60bedbcf4b21866137e33af23f74112d",
 "assets/FontManifest.json": "9c72b1b544c4323a935c2a6b02dcc30d",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/LICENSE": "954706ef951b9553ecb95d1a66a0f589",
@@ -21,7 +21,7 @@ const RESOURCES = {
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "03182ab63cd50dda0023a6a890a47c1c",
-"main.dart.js": "cdc925689245e126bfb51049b774e545",
+"main.dart.js": "9208e67945a6f0e5b2e77583f3b204a1",
 "manifest.json": "fa01ccc98a15867f9da765d5248876e0"
 };
 
