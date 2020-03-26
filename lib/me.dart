@@ -13,14 +13,65 @@ const Profile me = Profile(
       image: AssetImage('assets/github.png'),
     ),
   ],
+  experiences: [
+    const Experience(
+      name: 'Stage de développement web',
+      description: 'Développement d\'une plateforme web de contrôle pour un'
+          ' système de classification automatique d\'images',
+      year: '2019',
+      location: 'Grand Shooting',
+      techs: 'Git, Javascript, Node.js, React',
+    ),
+    const Experience(
+      name: 'Stage de machine learning',
+      description: 'Développement d\'un système de classification automatique'
+          ' d\'images à destination des marques de mode',
+      year: '2018',
+      location: 'Grand Shooting',
+      techs: 'Git, Python, Keras, AWS S3',
+    ),
+  ],
+  educations: [
+    const Education(
+      location: 'Université Pierre et Marie Curie, Paris',
+      name: 'L3 Informatique, mineure Design',
+      year: '2020',
+      startYear: '2019',
+    ),
+    const Education(
+      location: 'Université Pierre et Marie Curie, Paris',
+      name: 'L2 Informatique, mineure Design',
+      year: '2019',
+      startYear: '2018',
+    ),
+    const Education(
+      location: 'Université Pierre et Marie Curie, Paris',
+      name: 'L1 Mathématiques, Informatique, Physique, Ingénierie',
+      year: '2018',
+      startYear: '2017',
+    ),
+    const Education(
+      location: 'Lycée Alexandre Dumas, Saint-Cloud',
+      name: 'Bac S spécialité Informatique et Sciences du Numérique',
+      year: '2017',
+    ),
+  ],
+  projects: [
+    const Project(
+      name: 'rust-8080',
+      url: 'github.com/alexandrejanin/rust-8080',
+      description: 'Émulateur du processeur Intel 8080 écrit en Rust',
+    ),
+    const Project(
+      name: 'RealmGen',
+      url: 'github.com/alexandrejanin/RealmGen',
+      description: 'Générateur procédural de continents dans Unity en C#',
+    ),
+  ],
   skills: [
     const Skill(
-      name: 'Programmation système',
-      text: 'C, C++, Rust',
-    ),
-    const Skill(
-      name: 'Programmation orientée objet',
-      text: 'C#, Java',
+      name: 'Languages de programmation',
+      text: 'C, C++, Rust, Java',
     ),
     const Skill(
       name: 'Développement d\'applications mobiles',
@@ -35,15 +86,13 @@ const Profile me = Profile(
       text: 'PostgreSQL, AWS RDS',
     ),
     const Skill(
-      name: 'Déploiement d\'applications cloud',
+      name: 'Déploiement de serveurs',
       text: 'AWS EC2',
     ),
     const Skill(
       name: 'Langues',
       text: 'Français (langue maternelle)'
           '\nAnglais (courant)'
-          '\nAllemand (bases)'
-          '\nJaponais (bases)',
     ),
   ],
 );

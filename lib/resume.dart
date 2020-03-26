@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cv/profile.dart';
 
@@ -65,8 +66,7 @@ class MyResume extends StatelessWidget {
                     color: Colors.white30,
                   ),
                 SizedBox(height: 6),
-                if (profile.skills != null)
-                  SkillsList(skills: profile.skills),
+                if (profile.skills != null) SkillsList(skills: profile.skills),
               ],
             ),
           ),
@@ -83,10 +83,7 @@ class MyResume extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                      bottom: 8,
-                    ),
+                    padding: const EdgeInsets.only(left: 10, bottom: 8),
                     child: Text(
                       'Expérience',
                       style: TextStyle(
@@ -95,101 +92,57 @@ class MyResume extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 2,
-                          right: 10,
-                        ),
-                        child: Text(
-                          '2019',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Grand Shooting - Stage de développement web",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              "Développement d'une plateforme web de contrôle pour un système de classification automatique d'images",
-                              style: TextStyle(
-                                fontSize: 13,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              "Technologies utilisées: Git, Javascript, Node.js, React",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 2,
-                          right: 10,
-                        ),
-                        child: Text(
-                          '2018',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Grand Shooting - Stage de machine learning",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              "Développement d’un systeme de classification automatique d’images à destination des marques de mode",
+                  for (final experience in profile.experiences)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 2),
+                            child: Text(
+                              experience.startYear != null
+                                  ? '${experience.year}\n${experience.startYear}'
+                                  : experience.year,
+                              textAlign: TextAlign.right,
                               style: TextStyle(fontSize: 13),
                             ),
-                            SizedBox(height: 4),
-                            Text(
-                              "Technologies utilisées: Git, Python, Keras, AWS S3",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${experience.location} - ${experience.name}',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  experience.description,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  experience.techs,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                      bottom: 8,
-                      top: 20,
                     ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, bottom: 12),
                     child: Text(
                       'Formation',
                       style: TextStyle(
@@ -198,117 +151,47 @@ class MyResume extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 2,
-                          right: 10,
-                        ),
-                        child: Text(
-                          '2020\n2018',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      Column(
+                  for (final education in profile.educations)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Université Pierre et Marie Curie, Paris",
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 2),
+                            child: Text(
+                              education.startYear != null
+                                  ? '${education.year}\n${education.startYear}'
+                                  : education.year,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(fontSize: 13),
                             ),
                           ),
-                          SizedBox(height: 4),
-                          Text(
-                            "Licence d'informatique, mineure design",
-                            style: TextStyle(fontSize: 13),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  education.location,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  education.name,
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 2,
-                          right: 10,
-                        ),
-                        child: Text(
-                          '2018\n2017',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Université Pierre et Marie Curie, Paris",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              "L1 MIPI (mathématiques, informatique, physique, ingénierie)",
-                              style: TextStyle(fontSize: 13),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 2,
-                          right: 10,
-                        ),
-                        child: Text(
-                          '2017',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 13),
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Lycée Alexandre Dumas, Saint-Cloud",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              "Bac S spécialité Informatique et Sciences du Numérique",
-                              style: TextStyle(fontSize: 13),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                      bottom: 8,
-                      top: 20,
                     ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, bottom: 12),
                     child: Text(
                       'Projets',
                       style: TextStyle(
@@ -317,109 +200,35 @@ class MyResume extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 10,
-                      bottom: 4,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'rust-8080',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
+                  for (final project in profile.projects)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                project.name,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                project.url,
+                                style: TextStyle(
+                                  color: Colors.lightBlueAccent,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          'github.com/alexandrejanin/rust-8080',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.lightBlueAccent,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Text(
-                      "rust-8080 est un émulateur du processeur Intel 8080."
-                      "\nLangage: Rust",
-                      style: TextStyle(
-                        fontSize: 13,
+                          SizedBox(height: 4),
+                          Text(project.description),
+                        ],
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 10,
-                      bottom: 4,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'RealmGen',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          'github.com/alexandrejanin/RealmGen',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.lightBlueAccent,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Text(
-                      "RealmGen est un générateur procédural de continents."
-                      "\nLangage: C# (moteur Unity)",
-                      style: TextStyle(fontSize: 13),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 10,
-                      bottom: 4,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'VYBES',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          'instagram.com/vybes_app',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.lightBlueAccent,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Text(
-                      "VYBES est une application de rencontre basée sur la musique."
-                      "\nL'application est écrite en Dart (Flutter), le serveur en Typescript (Node.js).",
-                      style: TextStyle(fontSize: 13),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -506,15 +315,15 @@ class SkillsList extends StatelessWidget {
                   Text(
                     skill.name,
                     style: TextStyle(
-                      fontSize: 15,
                       color: Colors.white,
+                      fontSize: 13.0,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  SizedBox(height: 2),
                   Text(
                     skill.text,
                     style: TextStyle(
-                      fontSize: 13,
                       color: Colors.white,
                       height: 1.5,
                     ),

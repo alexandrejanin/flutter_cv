@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cv/page.dart';
 import 'package:flutter_cv/profile.dart';
 
 class MyProjects extends StatelessWidget {
@@ -9,20 +8,18 @@ class MyProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Page(
-      child: Container(
-        width: 800,
-        child: Column(
-          children: [
-            Text(
-              'Projets',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 40,
-              ),
+    return Container(
+      width: 800,
+      child: Column(
+        children: [
+          Text(
+            'Projets',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 40,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
