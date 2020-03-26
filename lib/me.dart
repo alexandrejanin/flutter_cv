@@ -11,16 +11,16 @@ const Profile me = Profile(
     const Contact.image(
       text: 'alexandrejanin',
       image: AssetImage('assets/github.png'),
+      url: 'https://github.com/alexandrejanin',
     ),
   ],
   experiences: [
     const Experience(
       name: 'Stage de développement web',
-      description: 'Développement d\'une plateforme web de contrôle pour un'
-          ' système de classification automatique d\'images',
+      description:
+          'Développement d\'une plateforme de contrôle pour un système de classification automatique d\'images, en React et Node.js.',
       year: '2019',
       location: 'Grand Shooting',
-      techs: 'Git, Javascript, Node.js, React',
     ),
     const Experience(
       name: 'Stage de machine learning',
@@ -28,7 +28,6 @@ const Profile me = Profile(
           ' d\'images à destination des marques de mode',
       year: '2018',
       location: 'Grand Shooting',
-      techs: 'Git, Python, Keras, AWS S3',
     ),
   ],
   educations: [
@@ -60,18 +59,27 @@ const Profile me = Profile(
     const Project(
       name: 'rust-8080',
       url: 'github.com/alexandrejanin/rust-8080',
-      description: 'Émulateur du processeur Intel 8080 écrit en Rust',
+      description: 'Émulateur du processeur Intel 8080 en Rust',
     ),
     const Project(
       name: 'RealmGen',
       url: 'github.com/alexandrejanin/RealmGen',
       description: 'Générateur procédural de continents dans Unity en C#',
     ),
+    const Project(
+      name: 'VYBES',
+      url: 'instagram.com/vybes_app',
+      description: 'Application de rencontre basée sur la musique',
+    ),
   ],
   skills: [
     const Skill(
-      name: 'Languages de programmation',
-      text: 'C, C++, Rust, Java',
+      name: 'Programmation système',
+      text: 'C, C++, Rust',
+    ),
+    const Skill(
+      name: 'Programmation orientée objet',
+      text: 'C#, Java',
     ),
     const Skill(
       name: 'Développement d\'applications mobiles',
@@ -87,12 +95,17 @@ const Profile me = Profile(
     ),
     const Skill(
       name: 'Déploiement de serveurs',
-      text: 'AWS EC2',
+      text: 'AWS EC2, AWS Elastic Beanstalk',
+    ),
+    const Skill(
+      name: 'Techniques de développement',
+      text: 'Continuous Integration'
+          '\nTest Driven Development',
     ),
     const Skill(
       name: 'Langues',
       text: 'Français (langue maternelle)'
-          '\nAnglais (courant)'
+          '\nAnglais (courant)',
     ),
   ],
 );

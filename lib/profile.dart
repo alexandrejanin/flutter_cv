@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Profile {
@@ -23,17 +22,20 @@ class Profile {
 
 class Contact {
   final String text;
+  final String url;
   final IconData icon;
   final ImageProvider image;
 
   const Contact.icon({
     @required this.text,
     @required this.icon,
+    this.url,
   }) : image = null;
 
   const Contact.image({
     @required this.text,
     @required this.image,
+    this.url,
   }) : icon = null;
 }
 
@@ -51,7 +53,6 @@ class Experience {
   final String name;
   final String location;
   final String description;
-  final String techs;
   final String year;
   final String startYear;
 
@@ -59,7 +60,6 @@ class Experience {
     @required this.name,
     @required this.location,
     @required this.description,
-    this.techs,
     @required this.year,
     this.startYear,
   });

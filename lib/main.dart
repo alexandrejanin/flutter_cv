@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cv/buttons.dart';
 import 'package:flutter_cv/me.dart';
@@ -27,6 +26,7 @@ class MyApp extends StatelessWidget {
           return SlideRoute(
             settings: settings,
             curve: Curves.ease,
+            duration: const Duration(milliseconds: 500),
             builder: (context) => Page(
               child: MyResume(profile: me),
             ),
@@ -89,8 +89,8 @@ class MyHomePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             TextButton(
+              'CV',
               onTap: () => Navigator.pushNamed(context, '/resume'),
-              text: 'CV',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,
@@ -98,8 +98,8 @@ class MyHomePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             TextButton(
+              'Projets',
               onTap: () => Navigator.pushNamed(context, '/projects'),
-              text: 'Projets',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,

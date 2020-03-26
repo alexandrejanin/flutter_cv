@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_cv/hand_cursor.dart';
 
 class AnyButton extends StatefulWidget {
   final Widget child;
@@ -40,29 +41,33 @@ class _AnyButtonState extends State<AnyButton>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: widget.behavior,
-      onTapDown: (_) async {
-        _animation.forward();
-      },
-      onTapCancel: () {
-        _animation.reverse();
-      },
-      onTapUp: (_) {
-        _animation.forward().then((_) {
-          if (widget.onTap != null) widget.onTap();
-          _animation.reverse().then((_) {
-            if (widget.onTapEnd != null) widget.onTapEnd();
+    return HandCursor(
+      child: GestureDetector(
+        behavior: widget.behavior,
+        onTapDown: (_) async {
+          _animation.forward();
+        },
+        onTapCancel: () {
+          _animation.reverse();
+        },
+        onTapUp: (_) {
+          _animation.forward().then((_) {
+            if (widget.onTap != null) widget.onTap();
+            _animation.reverse().then((_) {
+              if (widget.onTapEnd != null) widget.onTapEnd();
+            });
           });
-        });
-      },
-      child: ScaleTransition(
-        alignment: widget.alignment,
-        scale: Tween<double>(begin: 1, end: 0).animate(CurvedAnimation(
-          parent: _animation,
-          curve: Curves.easeOutSine,
-        )),
-        child: widget.child,
+        },
+        child: ScaleTransition(
+          alignment: widget.alignment,
+          scale: Tween<double>(begin: 1, end: 0.95).animate(
+            CurvedAnimation(
+              parent: _animation,
+              curve: Curves.easeOutSine,
+            ),
+          ),
+          child: widget.child,
+        ),
       ),
     );
   }
@@ -73,9 +78,9 @@ class TextButton extends StatefulWidget {
   final TextStyle style;
   final void Function() onTap;
 
-  const TextButton({
+  const TextButton(
+    this.text, {
     Key key,
-    @required this.text,
     this.style,
     this.onTap,
   }) : super(key: key);
@@ -105,22 +110,24 @@ class _TextButtonState extends State<TextButton>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) {
-        _controller.forward();
-      },
-      onTapUp: (_) {
-        if (widget.onTap != null) widget.onTap();
-        _controller.forward().then((value) => _controller.reverse());
-      },
-      onTapCancel: () {
-        _controller.reverse();
-      },
-      child: FadeTransition(
-        opacity: Tween<double>(begin: 1, end: 0.75).animate(_controller),
-        child: Text(
-          widget.text,
-          style: widget.style,
+    return HandCursor(
+      child: GestureDetector(
+        onTapDown: (_) {
+          _controller.forward();
+        },
+        onTapUp: (_) {
+          if (widget.onTap != null) widget.onTap();
+          _controller.forward().then((value) => _controller.reverse());
+        },
+        onTapCancel: () {
+          _controller.reverse();
+        },
+        child: FadeTransition(
+          opacity: Tween<double>(begin: 1, end: 0.75).animate(_controller),
+          child: Text(
+            widget.text,
+            style: widget.style,
+          ),
         ),
       ),
     );

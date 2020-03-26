@@ -3,12 +3,14 @@ import 'package:flutter/widgets.dart';
 class SlideRoute extends PageRoute<void> {
   SlideRoute({
     @required this.builder,
+    this.duration = const Duration(milliseconds: 350),
     this.curve = Curves.linear,
     RouteSettings settings,
   })  : assert(builder != null),
         super(settings: settings, fullscreenDialog: false);
 
   final WidgetBuilder builder;
+  final Duration duration;
   final Curve curve;
 
   @override
@@ -27,7 +29,7 @@ class SlideRoute extends PageRoute<void> {
   bool get barrierDismissible => true;
 
   @override
-  Duration get transitionDuration => Duration(milliseconds: 500);
+  Duration get transitionDuration => duration;
 
   @override
   Widget buildPage(
